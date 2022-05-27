@@ -1,14 +1,14 @@
 public class TicTacToe
 {
    private TicTacToeTerminal userInterface;
-   private NaivePlayer computerPlayer;
+   private AutoPlayer computerPlayer;
 
    private TicTacToeBoard board;
    private TicTacToePiece playersPiece;
    private TicTacToePiece computersPiece;
    private TicTacToePiece nextMove;
 
-   public TicTacToe(TicTacToePiece playersPiece)
+   public TicTacToe(TicTacToePiece playersPiece, AutoPlayer computerPlayer)
    {
       this.board = new TicTacToeBoard();
       this.userInterface = new TicTacToeTerminal(this.board);
@@ -21,7 +21,7 @@ public class TicTacToe
       {
          this.computersPiece = TicTacToePiece.X;
       }
-      this.computerPlayer = new NaivePlayer(computersPiece);
+      this.computerPlayer = computerPlayer;
       this.nextMove = TicTacToePiece.X;
    }
 

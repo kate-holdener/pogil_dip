@@ -1,8 +1,8 @@
-public class AutoPlayer
+public class NaivePlayer
 {
    private TicTacToePiece myPiece;
 
-   public AutoPlayer(TicTacToePiece piece)
+   public NaivePlayer(TicTacToePiece piece)
    {
       this.myPiece = piece;
    }
