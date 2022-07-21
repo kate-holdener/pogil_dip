@@ -4,16 +4,16 @@ public class TicTacToe
    private AutoPlayer computerPlayer;
 
    private TicTacToeBoard board;
-   private TicTacToePiece playersPiece;
+   private TicTacToePiece usersPiece;
    private TicTacToePiece computersPiece;
    private TicTacToePiece nextMove;
 
-   public TicTacToe(TicTacToePiece playersPiece, AutoPlayer computerPlayer)
+   public TicTacToe(TicTacToePiece usersPiece, AutoPlayer computerPlayer)
    {
       this.board = new TicTacToeBoard();
       this.userInterface = new TicTacToeTerminal(this.board);
-      this.playersPiece = playersPiece;
-      if (playersPiece == TicTacToePiece.X)
+      this.usersPiece = usersPiece;
+      if (usersPiece == TicTacToePiece.X)
       {
          this.computersPiece = TicTacToePiece.O;
       }
@@ -38,15 +38,15 @@ public class TicTacToe
 
    public void makeNextMove()
    {
-      if (this.nextMove == playersPiece)
+      if (this.nextMove == usersPiece)
       {
-         userInterface.manualMove(playersPiece);
+         userInterface.manualMove(usersPiece);
          this.nextMove = computersPiece;
       }
       else
       {
          this.computerPlayer.makeNextMove(board);
-         this.nextMove = playersPiece;
+         this.nextMove = usersPiece;
       }
    }
    
